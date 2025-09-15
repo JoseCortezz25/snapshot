@@ -1,57 +1,39 @@
 .primary-button {
-  background: #ff3333;
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease;
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-[14px] leading-[18px] font-semibold;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f3ff 100%);
+  color: #4c1d95;
+  box-shadow:
+    0 4px 14px rgba(76, 29, 149, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  border: 1px solid rgba(76, 29, 149, 0.15);
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    background: linear-gradient(
-      158deg,
-      #f68081 15%,
-      #ff3333 50%,
-      #ff3333 50%,
-      #f68081 90%
-    );
-    border-radius: 50px;
-    z-index: -1;
-  }
+.primary-button:hover {
+  background-color: #4c1d95;
+  filter: brightness(0.98);
 }
 
 .secondary-button {
-  @apply text-black-100 inline-flex items-center justify-center gap-2 rounded-[32px] border border-white;
-  background: linear-gradient(
-    270deg,
-    rgba(255, 255, 255, 0) -0.94%,
-    rgba(255, 255, 255, 0.09) 47.02%,
-    rgba(255, 255, 255, 0) 104.06%
-  );
+  @apply inline-flex items-center justify-center gap-2 rounded-full border;
+  border-color: rgba(24, 24, 27, 0.08);
+  background: rgba(255, 255, 255, 0.75);
   box-shadow:
-    2px 2px 4px 0px rgba(255, 255, 255, 0.25) inset,
-    0px 0px 3px 0px rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(2px);
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 6px 20px rgba(0, 0, 0, 0.06);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
 
-  &:hover {
-    background: linear-gradient(
-      270deg,
-      rgba(255, 255, 255, 0) -0.94%,
-      rgba(255, 255, 255, 0.18) 47.02%,
-      rgba(255, 255, 255, 0) 104.06%
-    );
-    box-shadow:
-      2px 2px 4px 0px rgba(255, 255, 255, 0.25) inset,
-      0px 0px 3px 0px rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(2px);
-  }
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Estado seleccionado con aria-pressed */
+.secondary-button[aria-pressed='true'] {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(76, 29, 149, 0.25);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.9) inset,
+    0 10px 28px rgba(76, 29, 149, 0.15);
+  color: #4c1d95;
 }

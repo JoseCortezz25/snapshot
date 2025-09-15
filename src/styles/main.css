@@ -1,2 +1,78 @@
 @import './components/atoms/input.css';
 @import './components/atoms/button.css';
+
+.tools-bar {
+  @apply absolute top-6 left-1/2 z-[1] inline-flex w-auto -translate-x-1/2 items-center justify-center rounded-3xl border border-gray-200/80 bg-white/60 px-5 py-3 shadow-sm/10 backdrop-blur-md;
+}
+
+.tools-bar__group {
+  @apply inline-flex items-center gap-3;
+}
+
+.workspace {
+  @apply relative mx-auto flex min-h-screen w-full flex-col items-center justify-start bg-transparent px-5 py-10 lg:px-0;
+}
+
+.effects-tool {
+  @apply absolute bottom-8 left-1/2 w-[90%] -translate-x-1/2 rounded-3xl border border-gray-200/80 bg-white/60 p-3 shadow-sm backdrop-blur-md lg:w-[520px];
+}
+
+.effects-tool__container {
+  @apply flex flex-col items-center gap-3;
+}
+
+.effects-tool__title {
+  @apply text-sm font-semibold text-gray-500;
+}
+
+.effects-tool__actions {
+  @apply inline-flex flex-wrap justify-center gap-3;
+}
+
+.canvas-board {
+  @apply relative h-[680px] w-full max-w-[90%] overflow-hidden rounded-[28px] border border-gray-200 bg-white shadow-[0_4px_40px_rgba(0,0,0,0.08)] md:max-w-[1200px];
+}
+
+/* Upload dropzone */
+.upload-drop {
+  @apply flex h-full w-full cursor-pointer items-center justify-center rounded-[28px] border-2 border-dashed border-gray-300/80 bg-gray-50;
+}
+.upload-drop__inner {
+  @apply flex flex-col items-center gap-1;
+}
+.upload-drop__title {
+  @apply text-sm font-semibold text-gray-700;
+}
+.upload-drop__hint {
+  @apply text-xs text-gray-500;
+}
+
+/* Preview */
+.preview-wrapper {
+  @apply relative h-full w-full;
+}
+.preview-image {
+  @apply h-full w-full object-cover;
+}
+
+/* Overlay loading */
+.overlay-loading {
+  @apply absolute inset-0 grid place-items-center bg-white/50 backdrop-blur-sm;
+}
+.spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: rgba(0, 0, 0, 0.6);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
